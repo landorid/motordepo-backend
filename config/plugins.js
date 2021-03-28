@@ -10,4 +10,16 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  email: {
+    provider: 'amazon-ses',
+    providerOptions: {
+      key: env('AWS_ACCESS_KEY_ID'),
+      secret: env('AWS_ACCESS_SECRET'),
+      amazon: `https://email.${env('AWS_REGION')}.amazonaws.com`,
+    },
+    settings: {
+      defaultFrom: 'noreply@motordepo.hu',
+      defaultReplyTo: 'info@motordepo.hu',
+    },
+  },
 });
