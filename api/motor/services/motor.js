@@ -1,8 +1,12 @@
 'use strict';
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-services)
- * to customize this service
- */
+const _ = require('lodash');
 
-module.exports = {};
+module.exports = {
+  getSearchObject(result) {
+    return {
+      id: result.id,
+      slug: result.slug,
+    };
+  },
+};

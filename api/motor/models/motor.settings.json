@@ -11,63 +11,61 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "Marka": {
+    "marka": {
       "type": "string",
       "required": true
     },
-    "Tipus": {
+    "tipus": {
       "type": "string",
       "required": true
     },
-    "Kivitel": {
+    "kivitel": {
       "type": "string",
       "required": true
     },
-    "Megye": {
+    "megye": {
       "type": "string",
       "required": true
     },
-    "Varos": {
-      "type": "string"
+    "varos": {
+      "type": "string",
+      "required": true
     },
-    "Ar": {
+    "ar": {
       "type": "integer",
       "required": true
     },
-    "Evjarat": {
-      "type": "integer"
-    },
     "hengerurtartalom": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
-    "Km": {
-      "type": "integer"
+    "km": {
+      "type": "integer",
+      "required": true
     },
-    "Teljesitmeny": {
+    "munkautem": {
       "type": "string"
     },
-    "Munkautem": {
+    "sebessegvalto": {
       "type": "string"
     },
-    "Sebessegvalto": {
+    "allapot": {
       "type": "string"
     },
-    "Allapot": {
+    "okmanyok": {
+      "type": "string",
+      "required": true
+    },
+    "egyeb": {
       "type": "string"
     },
-    "Okmanyok": {
-      "type": "string"
-    },
-    "Egyeb": {
-      "type": "string"
-    },
-    "Felszereltseg": {
+    "felszereltseg": {
       "type": "text"
     },
-    "Leiras": {
+    "leiras": {
       "type": "text"
     },
-    "Galeria": {
+    "galeria": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -76,6 +74,31 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "gyartas_ev": {
+      "type": "integer",
+      "required": true
+    },
+    "gyartas_honap": {
+      "type": "integer"
+    },
+    "uzemanyag": {
+      "type": "string"
+    },
+    "zeljesitmeny_le": {
+      "type": "integer"
+    },
+    "zeljesitmeny_kw": {
+      "type": "integer"
+    },
+    "elado": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "motors"
+    },
+    "telefonszam": {
+      "type": "string",
+      "required": true
     }
   }
 }

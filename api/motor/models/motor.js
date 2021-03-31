@@ -1,8 +1,19 @@
-'use strict';
+const index = 'motor';
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#lifecycle-hooks)
- * to customize this model
- */
+module.exports = {
+  lifecycles: {
+    async afterCreate(result) {
+      const searchObject = strapi.services.motor.getSearchObject(result);
+      strapi.services.algolia.saveObject(searchObject, index);
+    },
 
-module.exports = {};
+    async afterUpdate(result) {
+      const searchObject = strapi.services.motor.getSearchObject(result);
+      strapi.services.algolia.saveObject(searchObject, index);
+    },
+
+    async afterDelete(result) {
+      strapi.services.algolia.deleteObject(result.id, index);
+    },
+  },
+};
