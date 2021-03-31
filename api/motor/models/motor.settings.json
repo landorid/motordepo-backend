@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "motors",
+  "info": {
+    "name": "Motor",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Marka": {
+      "type": "string",
+      "required": true
+    },
+    "Tipus": {
+      "type": "string",
+      "required": true
+    },
+    "Kivitel": {
+      "type": "string",
+      "required": true
+    },
+    "Megye": {
+      "type": "string",
+      "required": true
+    },
+    "Varos": {
+      "type": "string"
+    },
+    "Ar": {
+      "type": "integer",
+      "required": true
+    },
+    "Evjarat": {
+      "type": "integer"
+    },
+    "hengerurtartalom": {
+      "type": "integer"
+    },
+    "Km": {
+      "type": "integer"
+    },
+    "Teljesitmeny": {
+      "type": "string"
+    },
+    "Munkautem": {
+      "type": "string"
+    },
+    "Sebessegvalto": {
+      "type": "string"
+    },
+    "Allapot": {
+      "type": "string"
+    },
+    "Okmanyok": {
+      "type": "string"
+    },
+    "Egyeb": {
+      "type": "string"
+    },
+    "Felszereltseg": {
+      "type": "text"
+    },
+    "Leiras": {
+      "type": "text"
+    },
+    "Galeria": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
