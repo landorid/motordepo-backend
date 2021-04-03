@@ -85,10 +85,10 @@
     "uzemanyag": {
       "type": "string"
     },
-    "zeljesitmeny_le": {
+    "teljesitmeny_le": {
       "type": "integer"
     },
-    "zeljesitmeny_kw": {
+    "teljesitmeny_kw": {
       "type": "integer"
     },
     "elado": {
@@ -99,6 +99,10 @@
     "telefonszam": {
       "type": "string",
       "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": false
     }
   }
 }
