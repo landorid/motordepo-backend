@@ -1,8 +1,18 @@
 'use strict';
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
- * to customize this controller
- */
+const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
 
-module.exports = {};
+module.exports = {
+  async create(ctx) {
+    let entity;
+    if (ctx.is('multipart')) {
+      const { data, files } = parseMultipartData(ctx);
+      data.elado = ctx.state.user.id;
+      entity = await strapi.services.motor.create(data, { files });
+    } else {
+      ctx.request.body.elado = ctx.state.user.id;
+      entity = await strapi.services.motor.create(ctx.request.body);
+    }
+    return sanitizeEntity(entity, { model: strapi.models.motor });
+  },
+};
