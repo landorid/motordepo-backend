@@ -33,6 +33,7 @@
     "lint-staged": "^10.5.4",
     "pg": "8.5.1",
     "prettier": "^2.2.1",
+    "slugify": "^1.5.0",
     "strapi": "3.5.3",
     "strapi-admin": "3.5.3",
     "strapi-connector-bookshelf": "3.5.3",
