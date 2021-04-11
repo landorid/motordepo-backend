@@ -5,9 +5,20 @@ const slugify = require('slugify');
 
 module.exports = {
   getSearchObject(result) {
+    const motor = _.cloneDeep(result);
+    delete motor.updated_by;
+    delete motor.created_by;
+    delete motor.elado;
+
     return {
-      id: result.id,
-      slug: result.slug,
+      ...motor,
+      elado: {
+        isCompany: result.elado.isCompany,
+      },
+      _geoloc: {
+        lat: result.lat,
+        lng: result.lng,
+      },
     };
   },
   async generateUniqueSlug(id, slugArray) {
