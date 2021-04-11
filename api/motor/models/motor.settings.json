@@ -92,9 +92,9 @@
       "type": "integer"
     },
     "elado": {
+      "via": "motors",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "motors"
+      "model": "user"
     },
     "telefonszam": {
       "type": "string",

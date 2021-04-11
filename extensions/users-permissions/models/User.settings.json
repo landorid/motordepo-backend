@@ -60,8 +60,30 @@
       "configurable": false
     },
     "motors": {
-      "via": "elado",
-      "collection": "motor"
+      "collection": "motor",
+      "via": "elado"
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "isCompany": {
+      "type": "boolean",
+      "default": false
+    },
+    "address": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

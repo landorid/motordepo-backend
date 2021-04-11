@@ -25,7 +25,7 @@ module.exports = {
       : {
           slug: id,
         };
-    const populate = ['galeria', 'elado'];
+    const populate = ['galeria', 'elado', 'elado.avatar'];
 
     const entity = await strapi.services.motor.findOne(params, populate);
 
