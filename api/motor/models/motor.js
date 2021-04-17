@@ -9,6 +9,12 @@ module.exports = {
         data.kivitel,
         data.gyartas_ev,
       ]);
+      const { lat, lng } = await strapi.services.motor.getLocation(
+        data.megye,
+        data.varos
+      );
+      data.lat = lat;
+      data.lng = lng;
     },
     async afterCreate(result) {
       const searchObject = strapi.services.motor.getSearchObject(result);
@@ -21,6 +27,12 @@ module.exports = {
         data.kivitel,
         data.gyartas_ev,
       ]);
+      const { lat, lng } = await strapi.services.motor.getLocation(
+        data.megye,
+        data.varos
+      );
+      data.lat = lat;
+      data.lng = lng;
     },
     async afterUpdate(result) {
       const searchObject = strapi.services.motor.getSearchObject(result);
